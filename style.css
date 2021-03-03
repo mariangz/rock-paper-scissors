@@ -2,6 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -14,43 +16,114 @@ html {
     --color-mint-dark: #18b2ae;
     --color-lemon: #fbd021;
     --color-lemon-dark: #fbb90a;
+    --color-purple: #553EC4;
+    --color-purple-dark: #301f86;
+    --color-gray: #F2F2F0;
+    --color-gray-dark: #E2E2E0;
 }
 
 body {
-    /* background-color: #18142B; */
     min-height: 100vh;
-    /* color: #FFF5F3; */
     font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .score-container {
-    width: 10rem;
-    background-color: #F2F2F0;
+    font-weight: bold;
+    width: 18rem;
+    background-color: var(--color-gray);
     color: #18181D;
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    box-shadow: 10px 10px 1px var(--color-gray-dark);
+}
+
+.numbers {
+    font-size: 5rem;
+}
+
+.player {
+    font-size: .7rem;
+    padding-bottom: .4rem;
+}
+
+.main {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.score-container-btn {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .player-container {
     width: 50%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 2rem;
 }
 
 .btn {
-    padding: 1rem;
+    padding: 2rem;
     color: var(--color-button-text);
-    width: 7rem;
-    margin: 1rem;
-    border-radius: .3rem;
+    border-radius: 15%;
+}
+
+.icon {
+    fill: #fff;
+    height: 5rem;
 }
 
 .coral {
     background-color: var(--color-coral);
+    box-shadow: 10px 10px 1px var(--color-coral-dark);
+    grid-area: 5 / 1 / 8 / 7;
 }
 
 .lemon {
     background-color: var(--color-lemon);
+    box-shadow: 10px 10px 1px var(--color-lemon-dark);
+    grid-area: 3 / 7 / 6 / 13;
 }
 
 .mint {
     background-color: var(--color-mint);
+    box-shadow: 10px 10px 1px var(--color-mint-dark);
+    grid-area: 6 / 7 / 9 / 13;
+}
+
+.computer-container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+.purple {
+    background-color: var(--color-purple);
+    box-shadow: 10px 10px 1px var(--color-purple-dark);
+    grid-area: 5 / 4 / 8 / 11;
+}
+
+.footer {
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    padding: 2rem
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: bold;
 }

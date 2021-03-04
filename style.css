@@ -40,8 +40,8 @@ body {
     color: #18181D;
     padding: 2rem;
     margin: 0 auto;
-    margin-top: 3rem;
-    box-shadow: 10px 10px 1px var(--color-gray-dark);
+    margin-top: 1rem;
+    box-shadow: 15px 15px 1px var(--color-gray-dark);
 }
 
 .numbers {
@@ -57,6 +57,7 @@ body {
     display: flex;
     max-width: 800px;
     margin: 0 auto;
+    margin-top: 3rem;
 }
 
 .score-container-btn {
@@ -87,19 +88,19 @@ body {
 .coral {
     background-color: var(--color-coral);
     box-shadow: 10px 10px 1px var(--color-coral-dark);
-    grid-area: 5 / 1 / 8 / 7;
+    grid-area: 2 / 1 / 5 / 7;
 }
 
 .lemon {
     background-color: var(--color-lemon);
     box-shadow: 10px 10px 1px var(--color-lemon-dark);
-    grid-area: 3 / 7 / 6 / 13;
+    grid-area: 1 / 7 / 4 / 13;
 }
 
 .mint {
     background-color: var(--color-mint);
     box-shadow: 10px 10px 1px var(--color-mint-dark);
-    grid-area: 6 / 7 / 9 / 13;
+    grid-area: 4 / 7 / 7 / 13;
 }
 
 .computer-container {
@@ -113,17 +114,17 @@ body {
 .purple {
     background-color: var(--color-purple);
     box-shadow: 10px 10px 1px var(--color-purple-dark);
-    grid-area: 5 / 4 / 8 / 11;
+    grid-area: 2 / 3 / 5 / 10;
 }
 
 .footer {
-    margin: auto;
+    margin: 0 auto;
     position: fixed;
     bottom: 0;
-    padding: 2rem
+    padding: 1rem;
+    margin-left: 1rem;
 }
 
 .title {
-    font-size: 1.3rem;
     font-weight: bold;
 }

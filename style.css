@@ -28,11 +28,6 @@ body {
     overflow: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .score-container {
     font-weight: bold;
     width: 18rem;
@@ -54,10 +49,17 @@ body {
 }
 
 .main {
-    display: flex;
+    
     max-width: 800px;
     margin: 0 auto;
     margin-top: 3rem;
+    /* border: 1px solid seagreen; */
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-container {
+    display: flex;
 }
 
 .score-container-btn {
@@ -70,8 +72,9 @@ body {
     width: 50%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    gap: 2rem;
+    grid-template-rows: repeat(14, .5rem);
+    gap: 1rem;
+    /* border: 1px solid pink; */
 }
 
 .btn {
@@ -89,33 +92,33 @@ body {
 .coral {
     background-color: var(--color-coral);
     box-shadow: 10px 10px 1px var(--color-coral-dark);
-    grid-area: 2 / 1 / 5 / 7;
+    grid-area: 4 / 1 /11 / 7;
 }
 
 .lemon {
     background-color: var(--color-lemon);
     box-shadow: 10px 10px 1px var(--color-lemon-dark);
-    grid-area: 1 / 7 / 4 / 13;
+    grid-area: 1 / 7 / 8 / 13;
 }
 
 .mint {
     background-color: var(--color-mint);
     box-shadow: 10px 10px 1px var(--color-mint-dark);
-    grid-area: 4 / 7 / 7 / 13;
+    grid-area: 8 / 7 / 15 / 13;
 }
 
 .computer-container {
     width: 50%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(12, .5rem);
     gap: 1rem;
 }
 
 .purple {
     background-color: var(--color-purple);
     box-shadow: 10px 10px 1px var(--color-purple-dark);
-    grid-area: 2 / 3 / 5 / 10;
+    grid-area: 4 / 4 /11 / 10;
 }
 
 .footer {
@@ -128,4 +131,10 @@ body {
 
 .title {
     font-weight: bold;
+}
+
+.message {
+    /* border: 1px solid greenyellow; */
+    width: 300px;
+    margin-top: 2rem;
 }

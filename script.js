@@ -1,8 +1,19 @@
 "use strict"
 
-
+//playround function
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == "rock");
+    if ( (playerSelection == "rock" && computerSelection == "scissors") ||
+        (playerSelection == "paper" && computerSelection == "rock") ||
+        (playerSelection == "scissors" && computerSelection == "paper") ) {
+        message("You", playerSelection, computerSelection);
+        //console.log("gana player " + playerSelection + "gana a " + computerSelection);
+    } else if (playerSelection == computerSelection) {
+        message("It's a tie", playerSelection, computerSelection);
+        //console.log("es un empate");
+    } else {
+        message("Computer", computerSelection, playerSelection);
+        //console.log("gana computer");
+    }
 }
 
 //player selection
@@ -40,3 +51,16 @@ function computerPlay(computerSelection) {
             break;
     }
 }
+
+//message
+function message(ganador, winner, looser) {
+    const div = document.querySelector(".message");
+    const paragraph = document.createElement("p");
+        if (ganador === "It's a tie") {
+            paragraph.textContent = `${ganador}. You chose ${winner} and computer chose ${looser} too.`;
+        } else {
+            paragraph.textContent = `${ganador} wins! ${winner} beats ${looser}`;
+        }
+    div.appendChild(paragraph);
+}
+

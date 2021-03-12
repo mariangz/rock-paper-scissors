@@ -28,6 +28,10 @@ body {
     overflow: hidden;
 }
 
+.header {
+    margin-top: 2rem;
+}
+
 .score-container {
     font-weight: bold;
     width: 18rem;
@@ -118,7 +122,7 @@ body {
 .purple {
     background-color: var(--color-purple);
     box-shadow: 10px 10px 1px var(--color-purple-dark);
-    grid-area: 4 / 4 /11 / 10;
+    grid-area: 4 / 3 / 11 / 9;
 }
 
 .footer {
@@ -135,6 +139,10 @@ body {
 
 .message {
     /* border: 1px solid greenyellow; */
-    width: 300px;
-    margin-top: 2rem;
+    width: 80%;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    /* display: flex; */
 }

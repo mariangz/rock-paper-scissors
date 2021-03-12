@@ -1,26 +1,38 @@
 "use strict"
 
+let scorePlayer = 0;
+let scoreComputer = 0;
+const paragraph = document.querySelector(".paragraph");
+const scoreYou = document.querySelector(".playerScore");
+const scoreCom = document.querySelector(".computerScore");
+const div = document.querySelector(".message");
+const final = document.querySelector(".final");
+
 //playround function
 function playRound(playerSelection, computerSelection) {
+    final.textContent = "";
+    let scorePlayer = 0;
+    let computerScore = 0;
     if ( (playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "paper" && computerSelection == "rock") ||
         (playerSelection == "scissors" && computerSelection == "paper") ) {
         message("You", playerSelection, computerSelection);
-        //console.log("gana player " + playerSelection + "gana a " + computerSelection);
+        scoreP();
+        reload();
     } else if (playerSelection == computerSelection) {
         message("It's a tie", playerSelection, computerSelection);
-        //console.log("es un empate");
     } else {
         message("Computer", computerSelection, playerSelection);
-        //console.log("gana computer");
+        scoreC();
+        reload();
     }
 }
 
 //player selection
 const rockBtn = document.querySelector("#rock");
 rockBtn.addEventListener("click", () => {
+    const div = document.querySelector(".message");
     playRound("rock", computerPlay());
-
 })
 
 const paperBtn = document.querySelector("#paper");
@@ -54,13 +66,31 @@ function computerPlay(computerSelection) {
 
 //message
 function message(ganador, winner, looser) {
-    const div = document.querySelector(".message");
-    const paragraph = document.createElement("p");
         if (ganador === "It's a tie") {
             paragraph.textContent = `${ganador}. You chose ${winner} and computer chose ${looser} too.`;
         } else {
             paragraph.textContent = `${ganador} wins! ${winner} beats ${looser}`;
         }
-    div.appendChild(paragraph);
 }
 
+//score
+function scoreP() {
+    scorePlayer++;
+    
+    scoreYou.textContent = scorePlayer;
+}
+
+function scoreC() {
+    scoreComputer++;
+    scoreCom.textContent = scoreComputer;
+}
+
+function reload() {
+    if (scorePlayer == 5 || scoreComputer == 5) {
+        final.textContent = "Game Over!"
+        scoreComputer = 0;
+        scorePlayer = 0;
+        scoreYou.textContent = scorePlayer;
+        scoreCom.textContent = scoreComputer;
+    }
+}
